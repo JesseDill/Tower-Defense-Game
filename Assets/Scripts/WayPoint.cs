@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class WayPoint : MonoBehaviour
 {
     [SerializeField] const int gridSize = 10;
@@ -24,4 +25,5 @@ public class WayPoint : MonoBehaviour
         topMeshRenderer.material.color = color;
 
     }
+
 }

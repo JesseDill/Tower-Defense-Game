@@ -16,10 +16,13 @@ public class PathFinding : MonoBehaviour
 
     public List<WayPoint> GetPath()
     {
-        LoadBlocks();
-        StartAndEnd();
-        BreadthFirstSearch();
-        CreatePath();
+        if (Path.Count == 0)
+        {
+            LoadBlocks();
+            StartAndEnd();
+            BreadthFirstSearch();
+            CreatePath();
+        }
         return Path;
     }
 
@@ -39,8 +42,8 @@ public class PathFinding : MonoBehaviour
         WayPoint previous = endPoint.exploredFrom;
         while (previous != startPoint)
         {
-            Path.Add(previous);
             previous = previous.exploredFrom;
+            Path.Add(previous);
         }
         Path.Add(startPoint);
         Path.Reverse();

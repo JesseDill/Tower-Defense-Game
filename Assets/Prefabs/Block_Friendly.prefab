@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8211558092099393429}
   - component: {fileID: 8179157685298586473}
   - component: {fileID: 8190274625519959245}
+  - component: {fileID: 3749076034535102674}
+  - component: {fileID: 7304435367699437357}
   m_Layer: 0
   m_Name: Block_Friendly
   m_TagString: Untagged
@@ -79,3 +81,30 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3749076034535102674
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214428529459845999}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: 0, y: 10, z: 0}
+--- !u!114 &7304435367699437357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214428529459845999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e655a7d19b452409e5cb6aa69b62ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 7285197391126212045, guid: 3141f4ff69a754142bf3f5ab934d5f9c,
+    type: 3}

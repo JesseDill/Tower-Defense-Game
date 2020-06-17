@@ -7,7 +7,8 @@ public class HitDetection : MonoBehaviour
 {
     [SerializeField] int hitPoints = 5;
     [SerializeField] GameObject deathFX;
-    [SerializeField] Transform parent;
+
+    //EnemySpawner enemySpawner = new EnemySpawner();
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,7 @@ public class HitDetection : MonoBehaviour
     private void Death()
     {
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
-        fx.transform.parent = parent;
+        //fx.transform.parent = enemySpawner.GetParent();
 
         /*DeathFX.transform.position = transform.position;
         if (!DeathFX.isPlaying)
