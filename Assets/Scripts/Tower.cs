@@ -9,6 +9,7 @@ public class Tower : MonoBehaviour
     [SerializeField] float sightRange = 10f;
     [SerializeField] ParticleSystem bullet;
 
+    public ControlActions controlActions;
     Transform targetEnemy;
     bool inRange;
 

@@ -7,12 +7,18 @@ public class HitDetection : MonoBehaviour
 {
     [SerializeField] int hitPoints = 5;
     [SerializeField] GameObject deathFX;
+    [SerializeField] AudioClip deathSFX;
+    [SerializeField] AudioClip hitSFX;
+    [SerializeField] Transform cameraPos;
+
+    AudioSource audioSource;
 
     //EnemySpawner enemySpawner = new EnemySpawner();
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         AddBoxCollider();
         AddRigidBody();
     }
@@ -39,7 +45,7 @@ public class HitDetection : MonoBehaviour
         }
     }
 
-    private void Death()
+    public void Death()
     {
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         //fx.transform.parent = enemySpawner.GetParent();
@@ -49,11 +55,15 @@ public class HitDetection : MonoBehaviour
         { 
             DeathFX.Play();
         }*/
+        float blastDuration = fx.GetComponent<ParticleSystem>().main.duration;
+        AudioSource.PlayClipAtPoint(deathSFX, cameraPos.position);
+        Destroy(fx, blastDuration);
         Destroy(gameObject);
     }
 
     private void Damage()
     {
+        audioSource.PlayOneShot(hitSFX);
         hitPoints = hitPoints - 1;
     }
 

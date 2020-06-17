@@ -42,8 +42,8 @@ public class PathFinding : MonoBehaviour
         WayPoint previous = endPoint.exploredFrom;
         while (previous != startPoint)
         {
-            previous = previous.exploredFrom;
             Path.Add(previous);
+            previous = previous.exploredFrom;
         }
         Path.Add(startPoint);
         Path.Reverse();
@@ -67,7 +67,6 @@ public class PathFinding : MonoBehaviour
         if (searchCenter == endPoint)
         {
             isRunning = false;
-            print("end found");
         }
     }
 
@@ -124,6 +123,10 @@ public class PathFinding : MonoBehaviour
             }
         }
         
+    }
+    public WayPoint GetEndPoint()
+    {
+        return endPoint;
     }
 
     // Update is called once per frame
